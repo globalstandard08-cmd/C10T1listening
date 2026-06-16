@@ -114,23 +114,23 @@
             border-radius: 4px;
         }
 
+        /* Question line: number directly next to input */
         .question-line {
             margin-bottom: 18px;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 8px;
             flex-wrap: wrap;
         }
 
         .q-number {
             font-weight: bold;
-            min-width: 28px;
+            flex-shrink: 0;
         }
 
         .input-field {
-            flex: 1;
-            min-width: 180px;
-            padding: 8px 12px;
+            width: 160px;
+            padding: 6px 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
             font-size: 16px;
@@ -222,7 +222,7 @@
         </div>
 
         <div class="content">
-            <h2>Section 1 – Questions 1–10</h2>
+            <h2>Section 1 –Questions 1–10</h2>
 
             <div class="instruction">
                 <strong>Questions 1–6:</strong> Complete the notes below. Write ONE WORD for each answer.
@@ -237,54 +237,52 @@
                 </div>
 
                 <div class="question-line">
-                    <span class="q-number">1.</span>
                     <span>Address: 24</span>
-                    <input type="text" class="input-field" id="q1" placeholder="Type answer here">
+                    <span class="q-number">1.</span>
+                    <input type="text" class="input-field" id="q1" placeholder="_______">
                     <span>Road</span>
                 </div>
 
                 <div class="question-line">
-                    <span class="q-number">Postcode:</span>
-                    <span>BH5 2OP</span>
+                    <span>Postcode: BH5 2OP</span>
                 </div>
 
                 <div class="question-line">
-                    <span class="q-number">Phone:</span>
-                    <span>(mobile) 077 8664 3091</span>
+                    <span>Phone: (mobile) 077 8664 3091</span>
                 </div>
 
                 <div class="question-line">
-                    <span class="q-number">2.</span>
                     <span>Heard about company from:</span>
-                    <input type="text" class="input-field" id="q2" placeholder="Type answer here">
+                    <span class="q-number">2.</span>
+                    <input type="text" class="input-field" id="q2" placeholder="_______">
                 </div>
 
                 <div style="font-weight:bold; margin:15px 0 10px;">Possible self-drive tours</div>
 
                 <div class="question-line">
-                    <span class="q-number">3.</span>
                     <span>Trip One – Los Angeles: customer wants to visit some</span>
-                    <input type="text" class="input-field" id="q3" placeholder="Type answer here">
+                    <span class="q-number">3.</span>
+                    <input type="text" class="input-field" id="q3" placeholder="_______">
                     <span>parks with her children</span>
                 </div>
 
                 <div class="question-line">
-                    <span class="q-number">4.</span>
                     <span>Yosemite Park: customer wants to stay in a lodge, not a</span>
-                    <input type="text" class="input-field" id="q4" placeholder="Type answer here">
+                    <span class="q-number">4.</span>
+                    <input type="text" class="input-field" id="q4" placeholder="_______">
                 </div>
 
                 <div class="question-line">
-                    <span class="q-number">5.</span>
                     <span>Trip Two – Cambria: customer wants to see the</span>
-                    <input type="text" class="input-field" id="q5" placeholder="Type answer here">
+                    <span class="q-number">5.</span>
+                    <input type="text" class="input-field" id="q5" placeholder="_______">
                     <span>on the way to Cambria</span>
                 </div>
 
                 <div class="question-line">
-                    <span class="q-number">6.</span>
                     <span>San Diego: wants to spend time on the</span>
-                    <input type="text" class="input-field" id="q6" placeholder="Type answer here">
+                    <span class="q-number">6.</span>
+                    <input type="text" class="input-field" id="q6" placeholder="_______">
                 </div>
             </div>
 
@@ -295,28 +293,28 @@
 
             <div class="notes-block">
                 <div class="question-line">
-                    <span class="q-number">7.</span>
                     <span>Trip One: Total distance</span>
-                    <input type="text" class="input-field" id="q7" placeholder="Type number here">
+                    <span class="q-number">7.</span>
+                    <input type="text" class="input-field" id="q7" placeholder="_______">
                     <span>km</span>
                 </div>
 
                 <div class="question-line">
-                    <span class="q-number">8.</span>
                     <span>Trip One includes: accommodation, car, and one</span>
-                    <input type="text" class="input-field" id="q8" placeholder="Type answer here">
+                    <span class="q-number">8.</span>
+                    <input type="text" class="input-field" id="q8" placeholder="_______">
                 </div>
 
                 <div class="question-line">
-                    <span class="q-number">9.</span>
                     <span>Trip Two price per person: £</span>
-                    <input type="text" class="input-field" id="q9" placeholder="Type number here">
+                    <span class="q-number">9.</span>
+                    <input type="text" class="input-field" id="q9" placeholder="_______">
                 </div>
 
                 <div class="question-line">
-                    <span class="q-number">10.</span>
                     <span>Trip Two includes: accommodation, car, and</span>
-                    <input type="text" class="input-field" id="q10" placeholder="Type answer here">
+                    <span class="q-number">10.</span>
+                    <input type="text" class="input-field" id="q10" placeholder="_______">
                 </div>
             </div>
 
