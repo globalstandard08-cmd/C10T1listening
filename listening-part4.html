@@ -5,209 +5,216 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IELTS Listening - Part 4</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
-            /* Added: enable highlighting everywhere reliably */
-            -webkit-user-select: text !important;
-            -moz-user-select: text !important;
-            -ms-user-select: text !important;
-            user-select: text !important;
-        }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Arial', sans-serif;
+        /* FORCE highlighting everywhere */
+        -webkit-user-select: text !important;
+        -moz-user-select: text !important;
+        -ms-user-select: text !important;
+        user-select: text !important;
+        pointer-events: auto !important;
+    }
 
-        body {
-            background-color: #f4f6f9;
-            padding: 20px;
-            line-height: 1.7;
-        }
+    body {
+        background-color: #f4f6f9;
+        padding: 20px;
+        line-height: 1.7;
+    }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
+    .container, .content, .notes-block, .mcq-block, .instruction, p, span, div, label {
+        -webkit-user-select: text !important;
+        -moz-user-select: text !important;
+        -ms-user-select: text !important;
+        user-select: text !important;
+    }
 
-        .logo-section {
-            text-align: center;
-            padding: 20px;
-            border-bottom: 1px solid #eee;
-        }
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        overflow: hidden;
+    }
 
-        .logo-section img {
-            height: 120px;
-            width: auto;
-            object-fit: contain;
-        }
+    .logo-section {
+        text-align: center;
+        padding: 20px;
+        border-bottom: 1px solid #eee;
+    }
 
-        .header-bar {
-            background-color: #1f3a5f;
-            color: white;
-            padding: 15px 25px;
-            font-size: 18px;
-            font-weight: bold;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    .logo-section img {
+        height: 120px;
+        width: auto;
+        object-fit: contain;
+    }
 
-        .audio-player {
-            background: #eef2f7;
-            padding: 18px 25px;
-            margin: 20px;
-            border-radius: 6px;
-            text-align: center;
-        }
+    .header-bar {
+        background-color: #1f3a5f;
+        color: white;
+        padding: 15px 25px;
+        font-size: 18px;
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-        .audio-player h3 {
-            color: #1f3a5f;
-            margin-bottom: 12px;
-            font-size: 17px;
-        }
+    .audio-player {
+        background: #eef2f7;
+        padding: 18px 25px;
+        margin: 20px;
+        border-radius: 6px;
+        text-align: center;
+    }
 
-        audio {
-            width: 100%;
-            max-width: 500px;
-        }
+    .audio-player h3 {
+        color: #1f3a5f;
+        margin-bottom: 12px;
+        font-size: 17px;
+    }
 
-        .content {
-            padding: 0 30px 30px;
-        }
+    audio {
+        width: 100%;
+        max-width: 500px;
+    }
 
-        h2 {
-            color: #1f3a5f;
-            margin: 25px 0 15px;
-            font-size: 22px;
-        }
+    .content {
+        padding: 0 30px 30px;
+    }
 
-        .instruction {
-            background-color: #f8fbfe;
-            border-left: 4px solid #1f3a5f;
-            padding: 15px;
-            margin-bottom: 25px;
-            border-radius: 4px;
-            font-weight: 500;
-        }
+    h2 {
+        color: #1f3a5f;
+        margin: 25px 0 15px;
+        font-size: 22px;
+    }
 
-        .notes-block {
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            padding: 25px;
-            margin-bottom: 30px;
-            background-color: #fdfdfd;
-        }
+    .instruction {
+        background-color: #f8fbfe;
+        border-left: 4px solid #1f3a5f;
+        padding: 15px;
+        margin-bottom: 25px;
+        border-radius: 4px;
+        font-weight: 500;
+    }
 
-        .notes-title {
-            font-weight: bold;
-            font-size: 20px;
-            margin-bottom: 25px;
-            text-align: center;
-            color: #1f3a5f;
-        }
+    .notes-block {
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        padding: 25px;
+        margin-bottom: 30px;
+        background-color: #fdfdfd;
+    }
 
-        .section-heading {
-            font-weight: bold;
-            margin: 22px 0 14px;
-            font-size: 17px;
-            color: #2c4b75;
-        }
+    .notes-title {
+        font-weight: bold;
+        font-size: 20px;
+        margin-bottom: 25px;
+        text-align: center;
+        color: #1f3a5f;
+    }
 
-        .question-line {
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            flex-wrap: wrap;
-            font-size: 16px;
-        }
+    .section-heading {
+        font-weight: bold;
+        margin: 22px 0 14px;
+        font-size: 17px;
+        color: #2c4b75;
+    }
 
-        .q-number {
-            font-weight: bold;
-            min-width: 35px;
-            color: #1f3a5f;
-        }
+    .question-line {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+        font-size: 16px;
+    }
 
-        .input-field {
-            width: 160px;
-            padding: 6px 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 16px;
-            background: white;
-            /* Added: allow selecting text inside inputs */
-            -webkit-user-select: text !important;
-            -moz-user-select: text !important;
-            -ms-user-select: text !important;
-            user-select: text !important;
-        }
+    .q-number {
+        font-weight: bold;
+        min-width: 35px;
+        color: #1f3a5f;
+    }
 
-        .input-field:focus {
-            outline: none;
-            border-color: #1f3a5f;
-            box-shadow: 0 0 3px rgba(31, 58, 95, 0.3);
-        }
+    .input-field {
+        width: 160px;
+        padding: 6px 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        background: white;
+        -webkit-user-select: text !important;
+        -moz-user-select: text !important;
+        -ms-user-select: text !important;
+        user-select: text !important;
+    }
 
-        .answers-section {
-            margin-top: 40px;
-            padding: 20px;
-            background-color: #f0f8ff;
-            border: 1px solid #b0d4f1;
-            border-radius: 6px;
-        }
+    .input-field:focus {
+        outline: none;
+        border-color: #1f3a5f;
+        box-shadow: 0 0 3px rgba(31, 58, 95, 0.3);
+    }
 
-        .answers-section h3 {
-            color: #1f3a5f;
-            margin-bottom: 15px;
-        }
+    .answers-section {
+        margin-top: 40px;
+        padding: 20px;
+        background-color: #f0f8ff;
+        border: 1px solid #b0d4f1;
+        border-radius: 6px;
+    }
 
-        .answers-content {
-            display: none;
-            padding: 15px;
-            background: white;
-            border-radius: 4px;
-            line-height: 2;
-            margin-top: 10px;
-        }
+    .answers-section h3 {
+        color: #1f3a5f;
+        margin-bottom: 15px;
+    }
 
-        .show-btn {
-            background-color: #1f3a5f;
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 14px;
-        }
+    .answers-content {
+        display: none;
+        padding: 15px;
+        background: white;
+        border-radius: 4px;
+        line-height: 2;
+        margin-top: 10px;
+    }
 
-        .show-btn:hover {
-            background-color: #2e568c;
-        }
+    .show-btn {
+        background-color: #1f3a5f;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+    }
 
-        .nav-buttons {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 40px;
-        }
+    .show-btn:hover {
+        background-color: #2e568c;
+    }
 
-        .btn {
-            padding: 11px 26px;
-            background-color: #1f3a5f;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            font-size: 16px;
-            border: none;
-            cursor: pointer;
-        }
+    .nav-buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+    }
 
-        .btn:hover {
-            background-color: #2e568c;
-        }
-    </style>
+    .btn {
+        padding: 11px 26px;
+        background-color: #1f3a5f;
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background-color: #2e568c;
+    }
+</style>
 </head>
 <body>
     <div class="container">
