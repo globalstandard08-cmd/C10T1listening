@@ -88,26 +88,49 @@
             font-weight: 500;
         }
 
-        .notes-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 35px;
-        }
-
-        .notes-table th, .notes-table td {
+        /* Single-column box style */
+        .notes-block {
             border: 1px solid #ccc;
-            padding: 14px 18px;
-            vertical-align: middle;
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 30px;
+            background-color: #fdfdfd;
         }
 
-        .notes-table th {
-            background-color: #f0f3f8;
-            font-size: 19px;
+        .notes-title {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .example-row {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #f8f8f8;
+            border-radius: 4px;
+        }
+
+        .question-line {
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .q-number {
+            font-weight: bold;
+            min-width: 28px;
         }
 
         .input-field {
-            width: 100%;
-            padding: 8px 10px;
+            flex: 1;
+            min-width: 180px;
+            padding: 8px 12px;
             border: 1px solid #ccc;
             border-radius: 4px;
             font-size: 16px;
@@ -117,6 +140,43 @@
             outline: none;
             border-color: #1f3a5f;
             box-shadow: 0 0 3px rgba(31, 58, 95, 0.3);
+        }
+
+        /* Answers section */
+        .answers-section {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f0f8ff;
+            border: 1px solid #b0d4f1;
+            border-radius: 6px;
+        }
+
+        .answers-section h3 {
+            color: #1f3a5f;
+            margin-bottom: 15px;
+        }
+
+        .answers-content {
+            display: none;
+            padding: 15px;
+            background: white;
+            border-radius: 4px;
+            line-height: 2;
+            margin-top: 10px;
+        }
+
+        .show-btn {
+            background-color: #1f3a5f;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .show-btn:hover {
+            background-color: #2e568c;
         }
 
         .nav-buttons {
@@ -152,11 +212,12 @@
             <span style="font-size:15px; opacity:0.9;">Teaching Mode</span>
         </div>
 
+        <!-- Audio Player -->
         <div class="audio-player">
-            <h3>Play Recording for Section 1</h3>
-            <audio controls>
+            <h3>Play Recording - Part 1</h3>
+            <audio controls preload="metadata">
                 <source src="audio/part1.mp3" type="audio/mpeg">
-                Your browser does not support the audio player.
+                <em>Audio file: Upload part1.mp3 to the "audio" folder to enable playback</em>
             
         </div>
 
@@ -164,110 +225,146 @@
             <h2>Section 1 – Questions 1–10</h2>
 
             <div class="instruction">
-                <strong>Questions 1–6:</strong> Complete the notes below. <br>
-                <em>Write ONE WORD for each answer.</em>
+                <strong>Questions 1–6:</strong> Complete the notes below. Write ONE WORD for each answer.
             </div>
 
-            <table class="notes-table">
-                <tr>
-                    <th colspan="2">SELF-DRIVE TOURS IN THE USA</th>
-                </tr>
-                <tr>
-                    <td><strong>Example:</strong> Name</td>
-                    <td>Andrea Brown</td>
-                </tr>
-                <tr>
-                    <td><strong>1.</strong> Address</td>
-                    <td>24 <input type="text" class="input-field" id="q1" placeholder="_______________"> Road</td>
-                </tr>
-                <tr>
-                    <td><strong>Postcode:</strong></td>
-                    <td>BH5 2OP</td>
-                </tr>
-                <tr>
-                    <td><strong>Phone:</strong></td>
-                    <td>(mobile) 077 8664 3091</td>
-                </tr>
-                <tr>
-                    <td><strong>2.</strong> Heard about company from</td>
-                    <td><input type="text" class="input-field" id="q2" placeholder="_______________"></td>
-                </tr>
-                <tr>
-                    <td colspan="2"><strong>Possible self-drive tours</strong></td>
-                </tr>
-                <tr>
-                    <td><strong>Trip One:</strong><br>Los Angeles</td>
-                    <td>customer wants to visit some <input type="text" class="input-field" id="q3" placeholder="_______________"> parks with her children</td>
-                </tr>
-                <tr>
-                    <td>Yosemite Park</td>
-                    <td>customer wants to stay in a lodge, not a <input type="text" class="input-field" id="q4" placeholder="_______________"></td>
-                </tr>
-                <tr>
-                    <td><strong>Trip Two:</strong><br>Cambria</td>
-                    <td>customer wants to see the <input type="text" class="input-field" id="q5" placeholder="_______________"> on the way to Cambria</td>
-                </tr>
-                <tr>
-                    <td>Santa Monica</td>
-                    <td>not interested in shopping</td>
-                </tr>
-                <tr>
-                    <td>San Diego</td>
-                    <td>wants to spend time on the <input type="text" class="input-field" id="q6" placeholder="_______________"></td>
-                </tr>
-            </table>
+            <!-- Single-column notes block -->
+            <div class="notes-block">
+                <div class="notes-title">SELF-DRIVE TOURS IN THE USA</div>
 
+                <div class="example-row">
+                    <strong>Example:</strong> Name: Andrea Brown
+                </div>
+
+                <div class="question-line">
+                    <span class="q-number">1.</span>
+                    <span>Address: 24</span>
+                    <input type="text" class="input-field" id="q1" placeholder="Type answer here">
+                    <span>Road</span>
+                </div>
+
+                <div class="question-line">
+                    <span class="q-number">Postcode:</span>
+                    <span>BH5 2OP</span>
+                </div>
+
+                <div class="question-line">
+                    <span class="q-number">Phone:</span>
+                    <span>(mobile) 077 8664 3091</span>
+                </div>
+
+                <div class="question-line">
+                    <span class="q-number">2.</span>
+                    <span>Heard about company from:</span>
+                    <input type="text" class="input-field" id="q2" placeholder="Type answer here">
+                </div>
+
+                <div style="font-weight:bold; margin:15px 0 10px;">Possible self-drive tours</div>
+
+                <div class="question-line">
+                    <span class="q-number">3.</span>
+                    <span>Trip One – Los Angeles: customer wants to visit some</span>
+                    <input type="text" class="input-field" id="q3" placeholder="Type answer here">
+                    <span>parks with her children</span>
+                </div>
+
+                <div class="question-line">
+                    <span class="q-number">4.</span>
+                    <span>Yosemite Park: customer wants to stay in a lodge, not a</span>
+                    <input type="text" class="input-field" id="q4" placeholder="Type answer here">
+                </div>
+
+                <div class="question-line">
+                    <span class="q-number">5.</span>
+                    <span>Trip Two – Cambria: customer wants to see the</span>
+                    <input type="text" class="input-field" id="q5" placeholder="Type answer here">
+                    <span>on the way to Cambria</span>
+                </div>
+
+                <div class="question-line">
+                    <span class="q-number">6.</span>
+                    <span>San Diego: wants to spend time on the</span>
+                    <input type="text" class="input-field" id="q6" placeholder="Type answer here">
+                </div>
+            </div>
+
+            <!-- Questions 7-10 -->
             <div class="instruction">
-                <strong>Questions 7–10:</strong> Complete the table below. <br>
-                <em>Write ONE WORD AND/OR A NUMBER for each answer.</em>
+                <strong>Questions 7–10:</strong> Complete the details below. Write ONE WORD AND/OR A NUMBER for each answer.
             </div>
 
-            <table class="notes-table">
-                <tr>
-                    <th></th>
-                    <th>Number of days</th>
-                    <th>Total distance</th>
-                    <th>Price (per person)</th>
-                    <th>Includes</th>
-                </tr>
-                <tr>
-                    <td><strong>Trip One</strong></td>
-                    <td>12 days</td>
-                    <td><input type="text" class="input-field" id="q7" placeholder="_______"> km</td>
-                    <td>£525</td>
-                    <td>• accommodation<br>• car<br>• one <input type="text" class="input-field" id="q8" placeholder="__________"></td>
-                </tr>
-                <tr>
-                    <td><strong>Trip Two</strong></td>
-                    <td>9 days</td>
-                    <td>980 km</td>
-                    <td>£<input type="text" class="input-field" id="q9" placeholder="________"></td>
-                    <td>• accommodation<br>• car<br>• <input type="text" class="input-field" id="q10" placeholder="__________"></td>
-                </tr>
-            </table>
+            <div class="notes-block">
+                <div class="question-line">
+                    <span class="q-number">7.</span>
+                    <span>Trip One: Total distance</span>
+                    <input type="text" class="input-field" id="q7" placeholder="Type number here">
+                    <span>km</span>
+                </div>
+
+                <div class="question-line">
+                    <span class="q-number">8.</span>
+                    <span>Trip One includes: accommodation, car, and one</span>
+                    <input type="text" class="input-field" id="q8" placeholder="Type answer here">
+                </div>
+
+                <div class="question-line">
+                    <span class="q-number">9.</span>
+                    <span>Trip Two price per person: £</span>
+                    <input type="text" class="input-field" id="q9" placeholder="Type number here">
+                </div>
+
+                <div class="question-line">
+                    <span class="q-number">10.</span>
+                    <span>Trip Two includes: accommodation, car, and</span>
+                    <input type="text" class="input-field" id="q10" placeholder="Type answer here">
+                </div>
+            </div>
+
+            <!-- Answers section -->
+            <div class="answers-section">
+                <h3>Answers for Section 1</h3>
+                <button class="show-btn" onclick="toggleAnswers()">Show / Hide Answers</button>
+                <div class="answers-content" id="answers">
+                    <strong>Answers:</strong><br>
+                    1. River<br>
+                    2. website<br>
+                    3. national<br>
+                    4. hotel<br>
+                    5. castle<br>
+                    6. beach<br>
+                    7. 2020<br>
+                    8. drive<br>
+                    9. 429<br>
+                    10. dinner
+                </div>
+            </div>
 
             <div class="nav-buttons">
-                <a href="listening-intro.html" class="btn">← Back to Introduction</a>
+                <a href="listening-intro.html" class="btn">← Back</a>
                 <a href="listening-part2.html" class="btn">Next: Part 2 →</a>
             </div>
         </div>
     </div>
 
     <script>
-        // Auto-save answers to browser
+        // Auto-save answers
         document.addEventListener('DOMContentLoaded', function() {
-            // Load saved answers if any
             for (let i = 1; i <= 10; i++) {
                 const field = document.getElementById('q' + i);
                 const saved = localStorage.getItem('listening_c10t1_q' + i);
                 if (saved) field.value = saved;
 
-                // Save on change
                 field.addEventListener('input', function() {
                     localStorage.setItem('listening_c10t1_q' + i, this.value.trim());
                 });
             }
         });
+
+        // Toggle answers
+        function toggleAnswers() {
+            const ansDiv = document.getElementById('answers');
+            ansDiv.style.display = ansDiv.style.display === 'block' ? 'none' : 'block';
+        }
     </script>
 </body>
 </html>
